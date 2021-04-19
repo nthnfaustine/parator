@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/parator/static/css/main.365b429d.chunk.css",
+    "main.js": "/parator/static/js/main.07fe8154.chunk.js",
+    "main.js.map": "/parator/static/js/main.07fe8154.chunk.js.map",
+    "runtime-main.js": "/parator/static/js/runtime-main.8797254b.js",
+    "runtime-main.js.map": "/parator/static/js/runtime-main.8797254b.js.map",
+    "static/css/2.fe359a49.chunk.css": "/parator/static/css/2.fe359a49.chunk.css",
+    "static/js/2.049633f2.chunk.js": "/parator/static/js/2.049633f2.chunk.js",
+    "static/js/2.049633f2.chunk.js.map": "/parator/static/js/2.049633f2.chunk.js.map",
+    "static/js/3.24929dab.chunk.js": "/parator/static/js/3.24929dab.chunk.js",
+    "static/js/3.24929dab.chunk.js.map": "/parator/static/js/3.24929dab.chunk.js.map",
+    "index.html": "/parator/index.html",
+    "static/css/2.fe359a49.chunk.css.map": "/parator/static/css/2.fe359a49.chunk.css.map",
+    "static/css/main.365b429d.chunk.css.map": "/parator/static/css/main.365b429d.chunk.css.map",
+    "static/js/2.049633f2.chunk.js.LICENSE.txt": "/parator/static/js/2.049633f2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8797254b.js",
+    "static/css/2.fe359a49.chunk.css",
+    "static/js/2.049633f2.chunk.js",
+    "static/css/main.365b429d.chunk.css",
+    "static/js/main.07fe8154.chunk.js"
+  ]
+}
