@@ -6,9 +6,6 @@ const Rank = () => {
             <div className='white f3'>
                 {'Pantun Generator'}
             </div>
-            <div className='white f1'>
-                {':)'}
-            </div>
         </div>
     )
 }
