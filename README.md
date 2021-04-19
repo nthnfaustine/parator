@@ -1,6 +1,7 @@
 # Pantun Generator
 A website that generates isi (the last two lines of pantun) from sampiran (the first two lines of pantun)
-# TRY HERE
+
+## TRY HERE
 https://nthnfaustine.github.io/parator/
 
 ## Dataset
