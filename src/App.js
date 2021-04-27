@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('./word_dict.json',{
+    fetch('http://localhost:3000/parator/word_dict.json',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -36,7 +36,7 @@ class App extends Component {
     .then(response => response.json())
     .then(users => this.setState({wordDic: users}))
 
-    fetch('./word_dict_label.json',{
+    fetch('http://localhost:3000/parator/word_dict_label.json',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -46,7 +46,7 @@ class App extends Component {
     .then(response => response.json())
     .then(users => this.setState({wordDicLabel: users}))
 
-    fetch('./generator_dict.json',{
+    fetch('http://localhost:3000/parator/generator_dict.json',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -56,7 +56,7 @@ class App extends Component {
     .then(response => response.json())
     .then(users => this.setState({pantunDic: users}))
 
-    fetch('./test.json',{
+    fetch('http://localhost:3000/parator/test.json',{
       headers : { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -119,9 +119,23 @@ class App extends Component {
 
       const akhiran = this.state.kamos['akhiran']
       const kata = this.state.kamos['kata']
-      const new_akhiran = this.swap(akhiran)
-      const number1 = new_akhiran[this.state.akhiran1];
-      const number2 = new_akhiran[this.state.akhiran2];
+      
+      // buat dictonary yang simpen angka apa aja yang pake akhiran itu
+      var dict1 = [];
+      var dict2 = [];
+      for (const property in akhiran) {
+        if(akhiran[property] == this.state.akhiran1){
+          dict1.push(property);
+        }
+        if(akhiran[property] == this.state.akhiran2){
+          dict2.push(property);
+        }
+      }
+
+      // ambil angka random dari dictionary nya
+      const number1 = dict1[Math.floor(Math.random() * dict1.length)];
+      const number2 = dict2[Math.floor(Math.random() * dict2.length)];
+
       const kata1 = kata[number1];
       const kata2 = kata[number2];
       this.setState({ output1: kata1 });
@@ -143,7 +157,7 @@ class App extends Component {
 
   async generatePantun(message){
     console.log("cooking pantun");
-    const model = await tf.loadLayersModel('./pantunModel/model.json');
+    const model = await tf.loadLayersModel('http://localhost:3000/parator/pantunModel/model.json');
     const pantunInput = await this.preprocessPantunInput(message);
     const predicted = model.predict(pantunInput)
     predicted.data().then(data => {
@@ -160,7 +174,7 @@ class App extends Component {
 
   async generatePantunOther(message){
     console.log("cooking pantun");
-    const model = await tf.loadLayersModel('./pantunModel/model.json');
+    const model = await tf.loadLayersModel('http://localhost:3000/parator/pantunModel/model.json');
     const pantunInput = await this.preprocessPantunInput(message);
     const predicted = model.predict(pantunInput)
     predicted.data().then(data => {
@@ -177,7 +191,7 @@ class App extends Component {
 
   async predictAkhiran(message){
     console.log("detecting akhiran...");
-    const model = await tf.loadLayersModel('./rhymeModel/model.json');
+    const model = await tf.loadLayersModel('http://localhost:3000/parator/rhymeModel/model.json');
     const predicted = model.predict(message)
     predicted.data().then(data => {
       const number = Math.max.apply(Math, data);
@@ -189,7 +203,7 @@ class App extends Component {
 
   async predictAkhiranOther(message){
     console.log("detecting akhiran...");
-    const model = await tf.loadLayersModel('./rhymeModel/model.json');
+    const model = await tf.loadLayersModel('http://localhost:3000/parator/rhymeModel/model.json');
     const predicted = model.predict(message)
     predicted.data().then(data => {
       const number = Math.max.apply(Math, data);
