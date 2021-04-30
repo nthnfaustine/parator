@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/parator/static/css/main.4d236046.chunk.css",
-    "main.js": "/parator/static/js/main.6fbf72b0.chunk.js",
-    "main.js.map": "/parator/static/js/main.6fbf72b0.chunk.js.map",
+    "main.js": "/parator/static/js/main.70b45091.chunk.js",
+    "main.js.map": "/parator/static/js/main.70b45091.chunk.js.map",
     "runtime-main.js": "/parator/static/js/runtime-main.8797254b.js",
     "runtime-main.js.map": "/parator/static/js/runtime-main.8797254b.js.map",
     "static/css/2.fe359a49.chunk.css": "/parator/static/css/2.fe359a49.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.fe359a49.chunk.css",
     "static/js/2.7453fe77.chunk.js",
     "static/css/main.4d236046.chunk.css",
-    "static/js/main.6fbf72b0.chunk.js"
+    "static/js/main.70b45091.chunk.js"
   ]
 }
